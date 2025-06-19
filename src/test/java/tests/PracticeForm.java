@@ -31,7 +31,6 @@ void StudentRegistrationForm() {
     //Чекбокс c текстом, где нужен выбор
     $("#genterWrapper").$(byText("Female")).click();
 
-
     //Поле на UI для ввода значения
     $("#userNumber").setValue("9096201212");
 
@@ -67,7 +66,6 @@ void StudentRegistrationForm() {
     $(".table-responsive").shouldHave(Condition.text("Picture 123.JPG"));
     $(".table-responsive").shouldHave(Condition.text("Address Russia, Moscow"));
     $(".table-responsive").shouldHave(Condition.text("State and City Uttar Pradesh Lucknow"));
-
 
     }
 }
