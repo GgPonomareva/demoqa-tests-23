@@ -16,7 +16,7 @@ public class Solutions {
 }
 
 @Test
-    void CheckForm() {
+    void checkFormTest() {
     //Откройте страницу
     open("/git-guides");
 

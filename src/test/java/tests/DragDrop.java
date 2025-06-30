@@ -1,15 +1,13 @@
 package tests;
 import com.codeborne.selenide.Configuration;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.DragAndDropOptions.to;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.CollectionCondition.exactTextsCaseSensitiveInAnyOrder;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-import static java.lang.ProcessBuilder.Redirect.to;
 
-public class DragDrop {
+public class с{
     @BeforeAll
     static void onSettings() {
         Configuration.browserSize = "1920x1080";
@@ -18,17 +16,25 @@ public class DragDrop {
 }
 
 @Test
-void CheckForm(){
-        open("drag_and_drop");
+void dragAndDropActionsTest(){
+    open("drag_and_drop");
+    $("#column-a").shouldHave(text("A"));
+    $("#column-b").shouldHave(text("B"));
     // Подвинуть курсор к элементу, кликнуть и держать, передвинуть по X и Y, отпустить кнопку мыши
     actions().moveToElement($("#column-a")).clickAndHold().moveByOffset(200, 0).release().perform();
+    $("#column-a").shouldHave(text("B"));
+    $("#column-b").shouldHave(text("A"));
         sleep(5000);
     }
 
     @Test
-    void CheckForm2(){
+    void dragAndDropCommandTest(){
         open("drag_and_drop");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
         $("#column-a").dragAndDrop(to("#column-b"));
+        $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
         sleep(5000);
     }
 }
