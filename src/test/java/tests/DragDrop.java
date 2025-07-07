@@ -24,7 +24,6 @@ public class DragDrop {
         actions().moveToElement($("#column-a")).clickAndHold().moveByOffset(200, 0).release().perform();
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
-        sleep(5000);
     }
 
     @Test
@@ -35,7 +34,6 @@ public class DragDrop {
         $("#column-a").dragAndDrop(to("#column-b"));
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
-        sleep(5000);
     }
 }
 
