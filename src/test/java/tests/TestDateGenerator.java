@@ -40,9 +40,9 @@ public class TestDateGenerator {
         return faker.address().city();
     }
 
-public static String getState() {
-    return faker.options().option(TestData.state);
-}
+    public static String getState() {
+        return faker.options().option(TestData.state);
+    }
 
     public static String getCities() {
         return faker.options().option(TestData.cities);
